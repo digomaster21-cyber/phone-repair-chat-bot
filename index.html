@@ -1,0 +1,107 @@
+<!-- frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix Phone Repair - Support</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1><i class="fas fa-mobile-alt"></i> QuickFix Phone Repair</h1>
+            <p class="subtitle">24/7 Customer Support Chat</p>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2><i class="fas fa-robot"></i> Repair Assistant</h2>
+                <div class="status">
+                    <span class="online-dot"></span>
+                    <span>Online</span>
+                </div>
+            </div>
+            
+            <!-- Chat Messages Area -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will appear here -->
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hello! Welcome to QuickFix Phone Repair. I can help with:
+                        <ul>
+                            <li>Screen replacements: $25</li>
+                            <li>Battery replacements: $15</li>
+                            <li>Business hours: Mon-Sat, 8am-6pm</li>
+                        </ul>
+                        How can I help you today?
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+            
+            <!-- Quick Response Buttons -->
+            <div class="quick-buttons" id="quickButtons">
+                <button class="quick-btn" onclick="sendQuickMessage('What time are you open?')">
+                    <i class="far fa-clock"></i> Business Hours
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('How much for screen replacement?')">
+                    <i class="fas fa-dollar-sign"></i> Screen Price
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('I need battery replacement')">
+                    <i class="fas fa-battery-quarter"></i> Battery Service
+                </button>
+                <button class="quick-btn" onclick="sendQuickMessage('I want to make a complaint')">
+                    <i class="fas fa-exclamation-circle"></i> Make Complaint
+                </button>
+            </div>
+            
+            <!-- Input Area -->
+            <div class="input-area">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Type your question here..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button id="sendButton" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+            
+            <!-- Business Info Footer -->
+            <div class="info-footer">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Tech Street</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(555) 123-4567</span>
+                </div>
+                <div class="info-item">
+                    <i class="far fa-clock"></i>
+                    <span>Mon-Sat: 8am-6pm</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3><i class="fas fa-lightbulb"></i> Try asking:</h3>
+            <div class="example-questions">
+                <span class="example" onclick="sendQuickMessage('What time are you open?')">"What time are you open?"</span>
+                <span class="example" onclick="sendQuickMessage('How much for screen replacement?')">"Screen replacement cost"</span>
+                <span class="example" onclick="sendQuickMessage('My battery drains fast')">"Battery issues"</span>
+                <span class="example" onclick="sendQuickMessage('I need to contact support')">"Contact information"</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
